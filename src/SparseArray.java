@@ -1,5 +1,6 @@
 /**
- * 利用稀疏数组对棋盘游戏进行存档和读档
+ * 需求：棋盘游戏进行存档和读档
+ * 解决方案：利用稀疏数组对棋盘游戏进行存档和读档
  */
 public class SparseArray {
     public static void main(String[] args) {
