@@ -5,7 +5,7 @@
 public class SparseArray {
     public static void main(String[] args) {
         //创建棋盘二维数组
-        int chessArr1[][] = new int[11][11];
+        int[][] chessArr1 = new int[11][11];
         chessArr1[1][2] = 1;
         chessArr1[2][3] = 2;
         chessArr1[3][4] = 2;
@@ -26,7 +26,7 @@ public class SparseArray {
         }
         System.out.println(sum);
         //利用真值数来定义稀疏数组
-        int sparseArr[][] = new int[sum+1][3];
+        int[][] sparseArr = new int[sum+1][3];
         sparseArr[0][0] = 11;
         sparseArr[0][1] = 11;
         sparseArr[0][2] = sum;
