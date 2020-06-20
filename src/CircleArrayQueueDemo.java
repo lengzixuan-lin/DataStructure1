@@ -1,5 +1,6 @@
 /**
- * 使用数组实现一个环形队列
+ * 需求：银行排队
+ * 解决方案：使用数组实现一个环形队列
  */
 public class CircleArrayQueueDemo {
 
