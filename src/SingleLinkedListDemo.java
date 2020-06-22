@@ -24,11 +24,64 @@ public class SingleLinkedListDemo {
         likedList.del(2);
         System.out.println("删除2号节点后的链表");
         likedList.getSingleLikedList();
+
+        System.out.println(getSize(likedList.getHead()));
+
+        System.out.println(getIndexNode(likedList.getHead(), 1));
+
+        reverseLinked(likedList.getHead());
+        likedList.getSingleLikedList();
     }
+    //获取链表的节点数
+    public static int getSize(HeroNode head){
+        HeroNode temp = head;
+        if(temp.next == null){
+            System.out.println("链表为空");
+        }
+        int count = 0;
+        while(temp.next != null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+    //获取倒数第index的节点
+    public static HeroNode getIndexNode(HeroNode head,int index){
+        HeroNode temp = head;
+        int size = getSize(head);
+        for(int i = 0;i <= size - index;i++){
+            temp = temp.next;
+        }
+        return temp;
+    }
+    //反转链表【将目前的节点指向新链表HEAD的下一个节点。再将Head.next指向指向目前的节点】
+    public static void reverseLinked(HeroNode head){
+        if(head.next == null){
+            throw new RuntimeException("链表为空");
+        }
+        if (head.next.next == null){
+            return;
+        }
+        HeroNode cur = head.next;
+        HeroNode next = null;
+        HeroNode reverseLink = new HeroNode(0,"","");
+        while (cur.next != null){
+            next = cur.next;
+            cur.next = reverseLink.next;
+            reverseLink.next = cur;
+            cur = next;
+        }
+        head.next = reverseLink.next;
+    }
+    //使用从
 }
 
 class SingleLikedList{
     public HeroNode head = new HeroNode(0,"","");
+
+    public HeroNode getHead() {
+        return head;
+    }
 
     //添加节点
     public void addNode(HeroNode newHeroNode){
